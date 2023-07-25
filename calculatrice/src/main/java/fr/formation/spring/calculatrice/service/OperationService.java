@@ -8,53 +8,53 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class OperationService {
 
-    public int addition(Operation operation) {
+    public int addition(Operation operation) throws IllegalArgumentException {
         int resultat = 0;
-        if (operation.getOperateur().equals("+")){
+        if (operation.getOperateur().equals("+")) {
             resultat = operation.getNombre1() + operation.getNombre2();
-        }else {
-            System.out.println("erreur opérateur");
+        } else {
+            throw new IllegalArgumentException("operateur invalise");
         }
         return resultat;
     }
 
 
-    public int soustraction(Operation operation) {
+    public int soustraction(Operation operation) throws IllegalArgumentException {
         int resultat = 0;
-        if (operation.getOperateur().equals("-")){
+        if (operation.getOperateur().equals("-")) {
             resultat = operation.getNombre1() - operation.getNombre2();
-        }else {
-            System.out.println("erreur opérateur");
+        } else {
+            throw new IllegalArgumentException("operateur invalise");
         }
         return resultat;
     }
 
-    public int division(Operation operation) {
+    public int division(Operation operation) throws IllegalArgumentException {
         int resultat = 0;
-        if (operation.getOperateur().equals("/")){
+        if (operation.getOperateur().equals("/")) {
             resultat = operation.getNombre1() / operation.getNombre2();
-        }else {
-            System.out.println("erreur opérateur");
+        } else {
+            throw new IllegalArgumentException("operateur invalise");
         }
         return resultat;
     }
 
-    public int multiplication(Operation operation) {
+    public int multiplication(Operation operation) throws IllegalArgumentException {
         int resultat = 0;
-        if (operation.getOperateur().equals("*")){
+        if (operation.getOperateur().equals("*")) {
             resultat = operation.getNombre1() * operation.getNombre2();
-        }else {
-            System.out.println("erreur opérateur");
+        } else {
+            throw new IllegalArgumentException("operateur invalise");
         }
         return resultat;
     }
 
-    public int modulo(Operation operation) {
+    public int modulo(Operation operation) throws IllegalArgumentException {
         int resultat = 0;
-        if (operation.getOperateur().equals("%")){
+        if (operation.getOperateur().equals("%")) {
             resultat = operation.getNombre1() % operation.getNombre2();
-        }else {
-            System.out.println("erreur opérateur");
+        } else {
+            throw new IllegalArgumentException("operateur invalise");
         }
         return resultat;
     }
